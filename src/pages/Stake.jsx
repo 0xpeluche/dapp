@@ -7,7 +7,7 @@ import StakeForm from "../components/stakeComponents/StakeForm";
 
 const Stake = () => {
   return (
-    <Container textAlign="center">
+    <Container px={0} mx={0} maxW="100vw">
       <Navbar />
       <StakeForm />
     </Container>

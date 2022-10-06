@@ -104,27 +104,17 @@ function App() {
   };
 
   return (
-    <Box width="100%" max-width="960px">
+    <Box textAlign="center" width="full" max-width="lg">
       <Flex flexDirection="column">
-        <Text
-          color="var(--secondary-color)"
-          fontSize="36"
-          lineHeight={4}
-          fontWeight="700"
-        >
+        <Text py={20} as="b" textStyle="subtitle__dark" lineHeight={4}>
           CBT Wallet
         </Text>
-        <Box>
-          <img src={logo} alt="logo_ethers" />
+        <Box alignSelf="center">
+          <img src={logo} alt="logo_ethers" width="240" />
         </Box>
 
         {error && (
-          <Text
-            m="0 auto"
-            width="30%"
-            background="var(--primary-color)"
-            color="var(--secondary-color)"
-          >
+          <Text m="0 auto" width="30%" textStyle="p__dark" background="red">
             {error}
           </Text>
         )}
@@ -132,96 +122,83 @@ function App() {
           <Text
             m="0 auto"
             width="30%"
+            textStyle="p__dark"
             background="lightgreen"
-            color="var(--secondary-color)"
           >
             {success}
           </Text>
         )}
-        <Text
-          color="var(--secondary-color)"
-          fontSize="24"
-          lineHeight={2}
-          fontWeight="400"
-        >
+        <Text textStyle="h1__dark" lineHeight={2}>
           {balance / 10 ** 18} <span className="eth">Eth</span>
         </Text>
-        <Flex mt="2rem" justifyContent="space-around">
+        <Flex mt={8} justifyContent="space-around">
           <Box w="50%">
-            <Text
-              textAlign="center"
-              color="var(--secondary-color)"
-              fontSize="18"
-              fontWeight="700"
-              marginBottom="1rem"
-            >
+            <Text as="b" textStyle="h3__dark" marginBottom={4}>
               Stake Ether
             </Text>
-            <Input
-              border="1px solid var(--secondary-color)"
-              height="2rem"
-              borderTopLeftRadius="5px"
-              borderBottomLeftRadius="5px"
-              paddingLeft="1rem"
-              paddingRight="1rem"
-              type="text"
-              placeholder="Montant en Ethers"
-              onChange={changeAmountSend}
-            />
-            <Button
-              border="1px solid var(--secondary-color)"
-              height="2rem"
-              borderTopRightRadius="5px"
-              borderBottomRightRadius="5px"
-              paddingLeft="1rem"
-              paddingRight="1rem"
-              cursor="pointer"
-              backgroundColor="#d1d5de"
-              color="var(--secondary-color)"
-              fontSize="18"
-              fontWeight="700"
-              onClick={transfer}
-            >
-              Send
-            </Button>
+            <Box>
+              <Input
+                border="1px solid #393e45"
+                w={48}
+                height={8}
+                borderTopLeftRadius="md"
+                borderBottomLeftRadius="md"
+                paddingLeft={4}
+                paddingRight={4}
+                type="text"
+                placeholder="Amount in Ethers"
+                onChange={changeAmountSend}
+              />
+              <Button
+                as="b"
+                border="1px solid #393e45"
+                height={8}
+                borderTopRightRadius="md"
+                borderBottomRightRadius="md"
+                paddingLeft={4}
+                paddingRight={4}
+                cursor="pointer"
+                backgroundColor="#d1d5de"
+                textStyle="h3__dark"
+                onClick={transfer}
+              >
+                Send
+              </Button>
+            </Box>
           </Box>
           <Box w="50%">
-            <Text
-              textAlign="center"
-              color="var(--secondary-color)"
-              fontSize="18"
-              fontWeight="700"
-              marginBottom="1rem"
-            >
+            <Text as="b" textStyle="h3__dark" marginBottom={4}>
               Withdraw Ether
             </Text>
-            <Input
-              border="1px solid var(--secondary-color)"
-              height="2rem"
-              borderTopLeftRadius="5px"
-              borderBottomLeftRadius="5px"
-              paddingLeft="1rem"
-              paddingRight="1rem"
-              type="text"
-              placeholder="Montant en Ethers"
-              onChange={changeAmountWithdraw}
-            />
-            <Button
-              border="1px solid var(--secondary-color)"
-              height="2rem"
-              paddingLeft="1rem"
-              paddingRight="1rem"
-              cursor="pointer"
-              backgroundColor="#d1d5de"
-              color="var(--secondary-color)"
-              fontSize="18"
-              fontWeight="700"
-              borderTopRightRadius="5px"
-              borderBottomRightRadius="5px"
-              onClick={withdraw}
-            >
-              Withdraw
-            </Button>
+            <Box>
+              <Input
+                border="1px solid #393e45"
+                w={48}
+                height={8}
+                borderTopLeftRadius="md"
+                borderBottomLeftRadius="md"
+                paddingLeft={4}
+                paddingRight={4}
+                type="text"
+                placeholder="Amount in Ethers"
+                onChange={changeAmountWithdraw}
+              />
+              <Button
+                as="b"
+                border="1px solid #393e45"
+                height={8}
+                borderTopRightRadius="md"
+                borderBottomRightRadius="md"
+                paddingLeft={4}
+                paddingRight={4}
+                cursor="pointer"
+                backgroundColor="#d1d5de"
+                textStyle="h3__dark"
+                onClick={withdraw}
+              >
+                Withdraw
+              </Button>
+            </Box>
           </Box>
         </Flex>
       </Flex>
